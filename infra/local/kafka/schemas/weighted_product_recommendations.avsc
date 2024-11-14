@@ -1,0 +1,21 @@
+{
+  "type": "record",
+  "name": "WeightedProductRecommendation",
+  "namespace": "com.jpaudelacruz.recommendation_system_ms.models.avro",
+  "fields": [
+    {
+      "name": "score",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      }
+    },
+    {
+      "name": "generatedAt",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      }
+    }
+  ]
+}

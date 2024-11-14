@@ -1,0 +1,25 @@
+{
+  "name": "jdbc-sink",
+  "config": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+    "tasks.max": "1",
+    "connection.url": "jdbc:postgresql://postgres:5432/recommendation-system",
+    "connection.user": "admin",
+    "connection.password": "4dm1n",
+    "topics": "user_recommendations",
+    "table.name.format": "recommendations",
+    "key.converter.schemas.enable": "false",
+    "value.converter.schemas.enable": "true",
+
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter": "io.confluent.connect.avro.AvroConverter",
+    "value.converter.schema.registry.url": "http://schema-registry:8081",
+
+    "auto.create": "false",
+    "auto.evolve": "true",
+    "insert.mode": "upsert",
+
+    "pk.mode": "record_value",
+    "pk.fields": "id"
+  }
+}

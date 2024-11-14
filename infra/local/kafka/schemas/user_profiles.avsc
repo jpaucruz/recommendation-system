@@ -1,0 +1,45 @@
+{
+  "type": "record",
+  "name": "UserProfile",
+  "namespace": "com.jpaudelacruz.recommendation_system_ms.models.avro",
+  "fields": [
+    { 
+      "name": "userId", 
+      "type": { 
+        "type": "string", 
+        "avro.java.string": "String" 
+      } 
+    },
+    { 
+      "name": "name", 
+      "type": { 
+        "type": "string", 
+        "avro.java.string": "String" 
+      } 
+    },
+    { 
+      "name": "email", 
+      "type": { 
+        "type": "string", 
+        "avro.java.string": "String" 
+      } 
+    },
+    { 
+      "name": "preferences", 
+      "type": { 
+        "type": "map", 
+        "values": { 
+          "type": "string", 
+          "avro.java.string": "String" 
+        } 
+      } 
+    },
+    { 
+      "name": "createdAt", 
+      "type": { 
+        "type": "string", 
+        "avro.java.string": "String" 
+      } 
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "type": "record",
+  "name": "UserRecommendation",
+  "namespace": "com.jpaudelacruz.recommendation_system_ms.models.avro",
+  "fields": [
+    {
+      "name": "id",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      }
+    },
+    {
+      "name": "userId", 
+      "type": { 
+        "type": "string", 
+        "avro.java.string": "String" 
+      } 
+    },
+    { 
+      "name": "productId", 
+      "type": { 
+        "type": "string", 
+        "avro.java.string": "String" 
+      } 
+    },
+    { 
+      "name": "rate",
+      "type": { 
+        "type": "string", 
+        "avro.java.string": "String" 
+      } 
+    },
+    {
+      "name": "generatedAt",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      }
+    },
+    {
+      "name": "score",
+      "type": "double"
+    },
+    {
+      "name": "timestamp",
+      "type": "long"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "type": "record",
+  "name": "UserAction",
+  "namespace": "com.jpaudelacruz.recommendation_system_ms.models.avro",
+  "fields": [
+    { 
+      "name": "userId", 
+      "type": { 
+        "type": "string", 
+        "avro.java.string": "String" 
+      } 
+    },
+    { 
+      "name": "productId", 
+      "type": { 
+        "type": "string", 
+        "avro.java.string": "String" 
+      } 
+    },
+    { 
+      "name": "timestamp", 
+      "type": { 
+        "type": "string", 
+        "avro.java.string": "String" 
+      } 
+    },
+    { 
+      "name": "action", 
+      "type": { 
+        "type": "string", 
+        "avro.java.string": "String" 
+      } 
+    }
+  ]
+}
