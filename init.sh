@@ -36,8 +36,8 @@ echo '      database: recommendation-system'
 
 # Run user interactions mock to simulate web users' interactions with products
 echo ''
-echo 'Running web user interactions mock (20 minutes, one interaction each 10 seconds) ...'
-echo ''
-cd $MOCKS_DIR
-./simulate-actions.sh
+#echo 'Running web user interactions mock (20 minutes, one interaction each 10 seconds) ...'
+#echo ''
+#cd $MOCKS_DIR
+#./simulate-actions.sh
 cd $BASE_DIR

@@ -24,20 +24,6 @@
         "avro.java.string": "String" 
       } 
     },
-    { 
-      "name": "rate",
-      "type": { 
-        "type": "string", 
-        "avro.java.string": "String" 
-      } 
-    },
-    {
-      "name": "generatedAt",
-      "type": {
-        "type": "string",
-        "avro.java.string": "String"
-      }
-    },
     {
       "name": "score",
       "type": "double"
