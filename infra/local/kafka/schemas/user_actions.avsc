@@ -1,7 +1,7 @@
 {
   "type": "record",
-  "name": "UserAction",
-  "namespace": "com.jpaudelacruz.recommendation_system_ms.models.avro",
+  "name": "UserActionMessagingEvent",
+  "namespace": "com.jpaudelacruz.recommendation_system_ms.infrastructure.messaging.producer.model",
   "fields": [
     { 
       "name": "userId", 

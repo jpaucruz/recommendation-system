@@ -2,8 +2,6 @@
 
 declare -A TOPICS=(
     ["user_actions"]="--partitions 3 --replication-factor 2"
-    ["user_profiles"]="--partitions 3 --replication-factor 2"
-    ["product_data"]="--partitions 3 --replication-factor 2"
     ["user_recommendations"]="--partitions 3 --replication-factor 2"
 )
 

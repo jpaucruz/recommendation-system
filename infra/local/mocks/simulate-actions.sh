@@ -1,9 +1,7 @@
 #!/bin/bash
 
 userIds=("user1" "user2" "user3" "user4" "user5")
-#userIds=("user1")
-productIds=("product1" "product2" "product3" "product4" "product5" "product6" "product7" "product8" "product9" "product10")
-#productIds=("product1" "product2")
+productIds=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12")
 actions=("view" "add-to-cart" "purchase")
 
 # script start time

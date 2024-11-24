@@ -1,0 +1,83 @@
+<div class="main-container" [ngClass]="{'no-cart': !isCartVisible}">
+  <!-- Contenedor de productos -->
+  <div class="products-container">
+    <h1>Bienvenido, {{ currentUser }}</h1>
+    <div class="products-list">
+      <div 
+        *ngFor="let product of products" 
+        class="product-item" 
+        (click)="openProductModal(product)">
+        <img [src]="product.imageUrl" alt="{{ product.name }}" width="100" />
+        <span>{{ product.name }}</span>
+        <!--<p>{{ product.description }}</p>-->
+      </div>
+    </div>
+
+    <!-- Modal de Producto -->
+    <app-product-modal 
+      *ngIf="selectedProduct" 
+      [product]="selectedProduct" 
+      (close)="selectedProduct = null" 
+      (addToCartEvent)="addToCart($event)">
+    </app-product-modal>
+  </div>
+
+  <!-- Productos recomendados -->
+  <div id="recommended-products">
+    <h4>Recomendados</h4>
+    <div class="products-grid">
+      <div *ngFor="let product of recommendations" class="product-card">
+        <img [src]="product.imageUrl" alt="{{ product.name }}" class="product-image" />
+        <div class="product-details">
+          <h3 class="product-name">{{ product.name }}</h3>
+          <p class="product-description">{{ product.description }}</p>
+          <button class="add-to-cart" (click)="addToCart(product)">Añadir al carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botón flotante para alternar carrito -->
+  <button class="toggle-cart-button" (click)="toggleCartVisibility()">
+    <img *ngIf="getCartCount() === 0" src="images/cart.png" alt="Toggle Cart" class="cart-icon" />
+    <span *ngIf="getCartCount() > 0" class="cart-count"> {{ getCartCount() }}</span>
+  </button>
+
+  <!-- Botón de cierre de sesión -->
+  <button class="logout-btn" (click)="onLogout()">Cerrar Sesión</button>
+
+  <!-- Carrito de compras -->
+  <div class="cart" [ngClass]="{ 'hidden': !isCartVisible }">
+    <h2>Carrito de Compras</h2>
+    <p>Total productos: {{ getCartCount() }}</p>
+    
+    <!-- Sección scrollable de productos -->
+    <div class="cart-items">
+      <ul>
+        <li 
+          *ngFor="let item of cart" 
+          class="cart-item">
+          <img [src]="item.imageUrl" alt="{{ item.name }}" width="40" />
+          <p>
+            {{ item.name }} (x{{ item.quantity }}) 
+            <button 
+              class="remove-item" 
+              (click)="removeFromCart(item)">
+              X
+            </button>
+          </p>
+        </li>
+      </ul>
+    </div>
+    
+    <!-- Sección fija con el botón de finalizar compra -->
+    <div class="cart-footer">
+      <button 
+        class="checkout-button" 
+        [disabled]="cart.length === 0"
+        (click)="finalizePurchase()">
+        Finalizar compra
+      </button>
+    </div>
+  </div>
+</div>

@@ -289,6 +289,13 @@ services:
         SPRINGDOC_API_DOCS_PATH: /v3/api-docs.yaml
         SPRINGDOC_API_DOCS_ENABLED: true
         SPRINGDOC_SWAGGER_UI_ENABLED: true
+        SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/recommendation-system
+        SPRING_DATASOURCE_USERNAME: admin
+        SPRING_DATASOURCE_PASSWORD: 4dm1n
+        SPRING_DATASOURCE_DRIVER-CLASS-NAME: org.postgresql.Driver
+        SPRING_JPA_HIBERNATE_DDL-AUTO: update
+        SPRING_JPA_SHOW-SQL: true
+        SPRING_JPA_HIBERNATE_NAMING_PHYSICAL-STRATEGY: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
 volumes:
   prometheus_data:
