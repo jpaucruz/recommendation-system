@@ -84,6 +84,10 @@ h1, h4 {
   box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(255, 193, 7, 0.4); 
 }
 
+#recommended-products {
+  background-color: lightyellow;
+}
+
 .recommendations h2 {
   color: #ffc107;
   font-size: 1.5rem;

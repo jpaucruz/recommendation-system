@@ -297,6 +297,15 @@ services:
         SPRING_JPA_SHOW-SQL: true
         SPRING_JPA_HIBERNATE_NAMING_PHYSICAL-STRATEGY: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
+  website:
+    image: angular-website:latest
+    hostname: website
+    container_name: website
+    ports:
+      - "4200:80"
+    depends_on:
+      - recommendation-system-ms
+
 volumes:
   prometheus_data:
   grafana_data:
