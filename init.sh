@@ -5,6 +5,22 @@ BASE_DIR=$(dirname "$(realpath "$BASH_SOURCE")")
 COMPOSE_DIR=$BASE_DIR/infra/local
 CONNECTOR_DIR=$BASE_DIR/infra/local/connectors
 MOCKS_DIR=$BASE_DIR/infra/local/mocks
+SERVICES_DIR=$BASE_DIR/services
+
+# create services docker images
+echo ''
+echo 'Building recommendation-system MS docker image ...'
+echo ''
+cd $SERVICES_DIR/recommendation-system-ms
+docker build -t recommendation-system-ms:latest . > /dev/null 2>&1
+cd $BASE_DIR
+echo ''
+echo 'Building website docker image ...'
+echo ''
+cd $SERVICES_DIR/website
+docker build -t angular-website . > /dev/null 2>&1
+cd $BASE_DIR
+
 
 # create infrastructure (zookeeper, brokers, schema registry, connect, control-center, prometheus, grafana, postgresql, recommendation-system-ms)
 echo ''
